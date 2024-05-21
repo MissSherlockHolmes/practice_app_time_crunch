@@ -24,12 +24,12 @@ class _PracticeAppTimeCrunchState extends State<PracticeAppTimeCrunch> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text("Invalid Input"),
-            content: Text("Please enter a valid number."),
+            title: const Text("Invalid Input"),
+            content: const Text("Please enter a valid number."),
             actions: [
               TextButton(
                 onPressed: () => Navigator.of(context).pop(),
-                child: Text("OK"),
+                child: const Text("OK"),
               ),
             ],
           );
@@ -42,7 +42,7 @@ class _PracticeAppTimeCrunchState extends State<PracticeAppTimeCrunch> {
       isLoading = true;  // Start loading
     });
 
-    var url = Uri.parse('https://api.freecurrencyapi.com/v1/latest?base_currency=$baseCurrency');
+    var url = Uri.parse('https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_iD8TqeV6KS0kvvcsLxbppgnbnlMyZmY2vTD4Mp4O=$baseCurrency');
     var headers = {
       'apikey': 'fca_live_iD8TqeV6KS0kvvcsLxbppgnbnlMyZmY2vTD4Mp4O'
     };
@@ -89,12 +89,12 @@ class _PracticeAppTimeCrunchState extends State<PracticeAppTimeCrunch> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text("Error"),
-            content: Text("An error occurred while fetching data. Please try again."),
+            title: const Text("Error"),
+            content: const Text("An error occurred while fetching data. Please try again."),
             actions: [
               TextButton(
                 onPressed: () => Navigator.of(context).pop(),
-                child: Text("OK"),
+                child: const Text("OK"),
               ),
             ],
           );
@@ -116,7 +116,7 @@ class _PracticeAppTimeCrunchState extends State<PracticeAppTimeCrunch> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            isLoading ? CircularProgressIndicator() : Text(
+            isLoading ? const CircularProgressIndicator() : Text(
               "$selectedTargetCurrency ${result.toStringAsFixed(2)}",
               style: const TextStyle(
                 fontSize: 40,
